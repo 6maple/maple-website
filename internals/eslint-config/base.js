@@ -1,0 +1,344 @@
+import eslint from '@eslint/js';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
+import eslintPluginUnicorn from 'eslint-plugin-unicorn';
+import importPlugin from 'eslint-plugin-import';
+import eslintPluginJsonc from 'eslint-plugin-jsonc';
+import markdown from '@eslint/markdown';
+import turboPlugin from 'eslint-plugin-turbo';
+import onlyWarn from 'eslint-plugin-only-warn';
+
+export const baseConfig = [
+  {
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: {
+        ...globals.browser,
+        ...globals.es2025,
+        ...globals.node,
+      },
+    },
+  },
+
+  eslint.configs.recommended,
+
+  ...tseslint.configs.recommended,
+
+  importPlugin.flatConfigs.recommended,
+  importPlugin.flatConfigs.typescript,
+
+  ...eslintPluginJsonc.configs['flat/recommended-with-json5'],
+
+  {
+    languageOptions: {
+      globals: globals.builtin,
+    },
+    plugins: {
+      unicorn: eslintPluginUnicorn,
+    },
+    rules: {
+      // unicorn
+      'unicorn/custom-error-definition': 'error',
+      'unicorn/error-message': 'error',
+      'unicorn/escape-case': 'error',
+      'unicorn/new-for-builtins': 'error',
+      'unicorn/no-array-method-this-argument': 'error',
+      'unicorn/no-array-push-push': 'error',
+      'unicorn/no-console-spaces': 'error',
+      'unicorn/no-for-loop': 'error',
+      'unicorn/no-hex-escape': 'error',
+      'unicorn/no-instanceof-array': 'error',
+      'unicorn/no-invalid-remove-event-listener': 'error',
+      'unicorn/no-new-array': 'error',
+      'unicorn/no-new-buffer': 'error',
+      'unicorn/no-unsafe-regex': 'off',
+      'unicorn/number-literal-case': 'error',
+      'unicorn/prefer-array-find': 'error',
+      'unicorn/prefer-array-flat-map': 'error',
+      'unicorn/prefer-array-index-of': 'error',
+      'unicorn/prefer-array-some': 'error',
+      'unicorn/prefer-date-now': 'error',
+      'unicorn/prefer-dom-node-dataset': 'error',
+      'unicorn/prefer-includes': 'error',
+      'unicorn/prefer-keyboard-event-key': 'error',
+      'unicorn/prefer-math-trunc': 'error',
+      'unicorn/prefer-modern-dom-apis': 'error',
+      'unicorn/prefer-negative-index': 'error',
+      'unicorn/prefer-number-properties': 'error',
+      'unicorn/prefer-optional-catch-binding': 'error',
+      'unicorn/prefer-prototype-methods': 'error',
+      'unicorn/prefer-query-selector': 'error',
+      'unicorn/prefer-reflect-apply': 'error',
+      'unicorn/prefer-string-slice': 'error',
+      'unicorn/prefer-string-starts-ends-with': 'error',
+      'unicorn/prefer-string-trim-start-end': 'error',
+      'unicorn/prefer-type-error': 'error',
+      'unicorn/throw-new-error': 'error',
+    },
+  },
+
+  markdown.configs.recommended,
+  markdown.configs.processor,
+
+  {
+    plugins: {
+      turbo: turboPlugin,
+    },
+    rules: {
+      'turbo/no-undeclared-env-vars': 'warn',
+    },
+  },
+  {
+    plugins: {
+      onlyWarn,
+    },
+  },
+];
+
+export const baseOverridesConfig = [
+  {
+    rules: {
+      // js/ts
+      camelcase: ['error', { properties: 'never' }],
+      'no-console': ['warn', { allow: ['error'] }],
+      'no-debugger': 'warn',
+      'no-constant-condition': ['error', { checkLoops: false }],
+      'no-restricted-syntax': ['error', 'LabeledStatement', 'WithStatement'],
+      'no-return-await': 'error',
+      'no-var': 'error',
+      'no-empty': ['error', { allowEmptyCatch: true }],
+      'prefer-const': [
+        'warn',
+        { destructuring: 'all', ignoreReadBeforeAssign: true },
+      ],
+      'prefer-arrow-callback': [
+        'error',
+        { allowNamedFunctions: false, allowUnboundThis: true },
+      ],
+      'object-shorthand': [
+        'error',
+        'always',
+        { ignoreConstructors: false, avoidQuotes: true },
+      ],
+      'prefer-rest-params': 'error',
+      'prefer-spread': 'error',
+      'prefer-template': 'error',
+
+      'no-redeclare': 'off',
+      '@typescript-eslint/no-redeclare': 'error',
+
+      // best-practice
+      'array-callback-return': 'error',
+      'block-scoped-var': 'error',
+      'no-alert': 'warn',
+      'no-case-declarations': 'error',
+      'no-multi-str': 'error',
+      'no-with': 'error',
+      'no-void': 'error',
+
+      'sort-imports': [
+        'warn',
+        {
+          ignoreCase: false,
+          ignoreDeclarationSort: true,
+          ignoreMemberSort: false,
+          memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
+          allowSeparatedGroups: false,
+        },
+      ],
+
+      // stylistic-issues
+      'prefer-exponentiation-operator': 'error',
+
+      // ts
+      '@typescript-eslint/explicit-module-boundary-types': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-non-null-assertion': 'off',
+      '@typescript-eslint/no-non-null-asserted-optional-chain': 'off',
+      '@typescript-eslint/ban-ts-comment': ['off', { 'ts-ignore': false }],
+      '@typescript-eslint/no-require-imports': 'off',
+      '@typescript-eslint/no-unused-expressions': 'off',
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
+        },
+      ],
+
+      // prettier
+      'prettier/prettier': 'error',
+
+      // import
+      'import/first': 'error',
+      'import/no-duplicates': 'error',
+      'import/order': [
+        'error',
+        {
+          groups: [
+            'builtin',
+            ['external', 'internal', 'parent', 'sibling', 'index', 'object'],
+            'type',
+          ],
+          pathGroups: [
+            {
+              pattern: 'vue',
+              group: 'external',
+              position: 'before',
+            },
+            {
+              pattern: '@vue/**',
+              group: 'external',
+              position: 'before',
+            },
+          ],
+          pathGroupsExcludedImportTypes: ['type'],
+          sortTypesGroup: true,
+          'newlines-between': 'never',
+          'newlines-between-types': 'always',
+        },
+      ],
+      'import/no-unresolved': 'off',
+      'import/namespace': 'off',
+      'import/default': 'off',
+      'import/no-named-as-default': 'off',
+      'import/no-named-as-default-member': 'off',
+      'import/named': 'off',
+      'import/newline-after-import': ['error', { count: 1 }],
+      'no-restricted-imports': [
+        'error',
+        {
+          paths: [
+            { name: 'lodash', message: 'Use lodash-unified instead.' },
+            { name: 'lodash-es', message: 'Use lodash-unified instead.' },
+          ],
+          patterns: [
+            {
+              group: ['lodash/*', 'lodash-es/*'],
+              message: 'Use lodash-unified instead.',
+            },
+          ],
+        },
+      ],
+
+      // eslint-plugin-eslint-comments
+      // 'eslint-comments/disable-enable-pair': [
+      //   'error',
+      //   { allowWholeFile: true },
+      // ],
+    },
+  },
+
+  {
+    files: ['*.json', '*.json5', '*.jsonc'],
+    languageOptions: {
+      parser: eslintPluginJsonc.parser,
+    },
+  },
+  {
+    files: ['package.json'],
+    languageOptions: {
+      parser: eslintPluginJsonc.parser,
+    },
+    rules: {
+      'jsonc/sort-keys': [
+        'error',
+        {
+          pathPattern: '^$',
+          order: [
+            'name',
+            'version',
+            'private',
+            'packageManager',
+            'description',
+            'type',
+            'keywords',
+            'homepage',
+            'bugs',
+            'license',
+            'author',
+            'contributors',
+            'funding',
+            'files',
+            'main',
+            'module',
+            'exports',
+            'unpkg',
+            'jsdelivr',
+            'browser',
+            'bin',
+            'man',
+            'directories',
+            'repository',
+            'publishConfig',
+            'scripts',
+            'peerDependencies',
+            'peerDependenciesMeta',
+            'optionalDependencies',
+            'dependencies',
+            'devDependencies',
+            'engines',
+            'config',
+            'overrides',
+            'pnpm',
+            'husky',
+            'lint-staged',
+            'eslintConfig',
+          ],
+        },
+        {
+          pathPattern: '^(?:dev|peer|optional|bundled)?[Dd]ependencies$',
+          order: { type: 'asc' },
+        },
+      ],
+    },
+  },
+  {
+    files: ['*.d.ts'],
+    rules: {
+      'import/no-duplicates': 'off',
+    },
+  },
+  {
+    files: ['*.js'],
+    rules: {
+      '@typescript-eslint/no-var-requires': 'off',
+    },
+  },
+  {
+    files: ['*.ts'],
+    rules: {
+      '@typescript-eslint/consistent-type-imports': [
+        'error',
+        { disallowTypeAnnotations: false },
+      ],
+    },
+  },
+  {
+    files: ['**/*.md/*.js', '**/*.md/*.ts'],
+    rules: {
+      'no-console': 'off',
+      'import/no-unresolved': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
+    },
+  },
+];
+
+export const baseIgnores = [
+  'node_modules',
+  '.cache/**', // 根目录下的 .cache
+  '**/dist/**',
+  '**/dist-ssr/**',
+  '**/coverage/**',
+  'pnpm-lock.yaml',
+  'CHANGELOG.en-US.md',
+  '**/components.d.ts',
+  '**/auto-imports.d.ts',
+  'coverage',
+  'play',
+  'ssr-testing/cases/*',
+  '!.*',
+];

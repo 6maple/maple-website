@@ -1,0 +1,48 @@
+/* 1. 定义滚动条相关的 CSS 变量 */
+:root {
+  /* 亮色模式下的变量 (默认) */
+  --scrollbar-bg: #f0f0f0; /* 滚动条轨道背景 */
+  --scrollbar-thumb: #888888; /* 滚动条滑块颜色 */
+  --scrollbar-thumb-hover: #555555; /* 滑块悬停颜色 */
+}
+
+/* 2. 自动检测暗色模式并覆盖变量 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --scrollbar-bg: #2d2d2d;
+    --scrollbar-thumb: #bbbbbb; /* 暗色下用亮滑块 */
+    --scrollbar-thumb-hover: #ffffff;
+  }
+}
+
+/* 3. 针对 Webkit 内核浏览器（Chrome, Edge, Safari, 以及移动端浏览器）进行样式覆盖 */
+
+/* 整个滚动条区域 */
+#app::-webkit-scrollbar {
+  width: 10px; /* 纵向滚动条宽度 */
+  height: 10px; /* 横向滚动条高度 */
+}
+
+/* 滚动条轨道 */
+#app::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg);
+  border-radius: 10px;
+}
+
+/* 滚动条滑块 */
+#app::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 10px;
+  border: 2px solid var(--scrollbar-bg); /* 增加边框让滑块看起来有边距感 */
+}
+
+/* 鼠标悬停在滑块上 */
+#app::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* 4. 标准属性（针对 Firefox） */
+#app {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-bg);
+}

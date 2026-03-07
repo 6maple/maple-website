@@ -1,0 +1,57 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  /* 禁止页面左右晃动（常用于移动端适配） */
+  overflow-x: hidden;
+  /* 使用系统字体，优化渲染 */
+  font-family:
+    'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+* {
+  /* 强制所有元素使用标准盒模型 */
+  box-sizing: border-box;
+  outline: none !important;
+}
+
+/* 移除链接默认样式 */
+a {
+  text-decoration: none;
+}
+
+/* 统一图片对齐方式 */
+img {
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  height: 100%;
+  overflow: auto;
+}
+
+#nprogress {
+  pointer-events: none;
+}
+/* 修改进度条颜色 */
+#nprogress .bar {
+  background: var(
+    --el-color-primary-light-7
+  ) !important; /* 例如改为 Element Plus 的蓝色 */
+  height: 3px !important; /* 加粗一点 */
+}

@@ -1,0 +1,67 @@
+{
+  "name": "repo",
+  "private": true,
+  "packageManager": "pnpm@10.18.2",
+  "workspaces": [
+    "packages/*",
+    "play",
+    "docs"
+  ],
+  "scripts": {
+    "clean": "cmd /c rimraf \"./**/node_modules\"",
+    "cz": "czg",
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "check-types": "turbo run check-types",
+    "stub": "turbo run stub",
+    "typecheck": "run-p typecheck:node typecheck:child",
+    "typecheck:node": "tsc -p tsconfig.node.json --noEmit",
+    "typecheck:child": "pnpm -r --parallel run typecheck",
+    "format": "prettier --write --experimental-cli .",
+    "lint-commit": "commitlint",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "prepare": "husky && git config core.ignorecase false",
+    "postinstall": "pnpm stub &"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@commitlint/cli": "^20.2.0",
+    "@commitlint/config-conventional": "^20.2.0",
+    "@pnpm/find-workspace-packages": "^4.0.16",
+    "@pnpm/logger": "^4.0.0",
+    "@pnpm/types": "^8.4.0",
+    "@types/fs-extra": "^9.0.13",
+    "@types/gulp": "^4.0.9",
+    "@types/node": "catalog:types",
+    "cz-git": "^1.11.1",
+    "czg": "^1.11.1",
+    "eslint": "catalog:dev",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.5.1",
+    "npm-run-all2": "catalog:dev",
+    "prettier": "catalog:dev",
+    "rimraf": "^4.4.1",
+    "tinyglobby": "^0.2.15",
+    "tsx": "^4.19.3",
+    "turbo": "^2.8.13",
+    "typescript": "catalog:dev"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-git"
+    }
+  },
+  "lint-staged": {
+    "*.{vue,js,ts,jsx,tsx,md,json,scss}": [
+      "eslint --concurrency=auto",
+      "prettier --write --experimental-cli"
+    ]
+  }
+}

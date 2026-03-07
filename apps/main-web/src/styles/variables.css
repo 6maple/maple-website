@@ -1,0 +1,74 @@
+:root {
+  /* 基础色板 */
+
+  /*  1. POLARIS (北极星蓝) - 核心品牌色
+     设计意图：象征职场导航的指路明灯。明亮而深邃，建立专业且值得信赖的第一印象。 */
+  --app-color-polaris-dark-3: #0a2d61; /* 极深 navy，用于文字或深色标题 */
+  --app-color-polaris-dark-2: #0e3e85; /* 按钮激活态 (Active) */
+  --app-color-polaris-dark-1: #1254b3; /* 悬停微调 */
+  --app-color-polaris: #1565d8; /* 基础主色：高饱和/高亮度，极具视觉冲击力 */
+  --app-color-polaris-light-1: #4484e0; /* 悬停态 (Hover) */
+  --app-color-polaris-light-2: #a1c1ef; /* 禁用态或边框 */
+  --app-color-polaris-light-3: #e8effb; /* 极浅背景，用于导航栏或卡片底色 */
+
+  /*  2. EFFICIENCY (效率青) - 交互与状态色
+     设计意图：用于“投递成功”、“简历通过”、“即时消息”。
+     高亮的青色代表求职过程中的极速响应和高效流程。 */
+  --app-color-efficiency-dark-3: #005a61; /* 深青色，用于状态文字 */
+  --app-color-efficiency-dark-2: #007c85; /* 按钮点击反馈 */
+  --app-color-efficiency-dark-1: #009ea8; /* 悬停微调 */
+  --app-color-efficiency: #00beca; /* 基础色：用于在线状态、申请成功 */
+  --app-color-efficiency-light-1: #33cbd5; /* 进度条填充 */
+  --app-color-efficiency-light-2: #99e5ea; /* 浅色标签背景 */
+  --app-color-efficiency-light-3: #e6f8f9; /* 成功提示的大面积底色 */
+
+  /*  3. EMPOWER (赋能紫) - 高端与专业服务
+     设计意图：用于“大厂专区”、“猎头内推”、“薪资报告”。
+     紫色增加平台的睿智感和高端感。 */
+  --app-color-empower-dark-3: #3e1291; /* 核心文字 */
+  --app-color-empower-dark-2: #5519c6; /* 点击态 */
+  --app-color-empower-dark-1: #6d20fc; /* 悬停微调 */
+  --app-color-empower: #8140ff; /* 基础色：高端职位标识、测评系统 */
+  --app-color-empower-light-1: #9a66ff; /* 渐变起始色 */
+  --app-color-empower-light-2: #cdb3ff; /* 轻量级分割线 */
+  --app-color-empower-light-3: #f2ecff; /* 高端卡片的高亮底色 */
+
+  /*  4. MOMENTUM (动能橙) - 紧急与行动唤起
+     设计意图：用于“急招职位”、“即将截止”、“高匹配度”。
+     利用高饱和橙色唤起用户的行动欲望，但不失稳重。 */
+  --app-color-momentum-dark-3: #8a4a00; /* 警告类文字 */
+  --app-color-momentum-dark-2: #bd6500; /* 点击反馈 */
+  --app-color-momentum-dark-1: #ed8000; /* 悬停微调 */
+  --app-color-momentum: #ff8a00; /* 基础色：抢眼标签、热度图标 */
+  --app-color-momentum-light-1: #ffa133; /* 进度条高亮 */
+  --app-color-momentum-light-2: #ffd099; /* 弱化提醒 */
+  --app-color-momentum-light-3: #fff3e6; /* 急招背景色 */
+
+  /*  5. STABILITY (石墨墨) - 中性支撑色
+     设计意图：非彩色支撑。保持界面的沉稳和专业阅读体验，
+     不带偏色，确保用户长时间搜索职位不产生色彩疲劳。 */
+  --app-color-stability-dark-3: #1a1c1e; /* 极深灰，用于正文标题 */
+  --app-color-stability-dark-2: #303437; /* 次要文字 */
+  --app-color-stability-dark-1: #5f666b; /* 说明文字 */
+  --app-color-stability: #8e979e; /* 基础色：图标、占位符 */
+  --app-color-stability-light-1: #c6ccd1; /* 默认边框 */
+  --app-color-stability-light-2: #e1e4e8; /* 浅色分割线 */
+  --app-color-stability-light-3: #f5f7f9; /* 整个页面的浅灰色背景底色 */
+
+  /* 布局间距 */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 16px;
+  --spacing-4: 20px;
+  --spacing-5: 32px;
+  --spacing-6: 48px;
+  --spacing-7: 64px;
+
+  /* 圆角 */
+  --radius-base: 4px;
+
+  /* app */
+  --app-header-height: 50px;
+  --app-footer-height: 80px;
+  --app-scroll-bar-width: 10px;
+}
