@@ -1,8 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import HomePortfolio from './HomePortfolio.tsx';
+</script>
 
 <template>
-  <div>
-    {{ $t('app.text.home') }}
+  <div class="home">
+    <HomePortfolio />
   </div>
 </template>
 

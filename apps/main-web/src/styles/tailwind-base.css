@@ -1,4 +1,5 @@
 @import 'tailwindcss';
 @import '@repo/ui/base.css';
+@variant dark (&:where(.dark, .dark *));
 
 @source '../../../../packages/ui/src/**/*.vue';

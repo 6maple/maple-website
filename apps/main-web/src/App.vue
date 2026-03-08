@@ -2,6 +2,7 @@
 import { useHead } from '@unhead/vue';
 import { RouterView } from 'vue-router';
 import { ElConfigProvider } from 'element-plus';
+import MainLayout from './layouts/MainLayout.vue';
 
 const zIndex = 3000;
 const size = 'default';
@@ -19,9 +20,7 @@ useHead({
 
 <template>
   <ElConfigProvider :size="size" :z-index="zIndex">
-    <ElWatermark class="h-full" content="watermark" :gap="[600, 600]">
-      <RouterView />
-    </ElWatermark>
+    <MainLayout> <RouterView /> </MainLayout>
   </ElConfigProvider>
 </template>
 
