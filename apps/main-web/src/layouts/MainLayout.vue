@@ -61,91 +61,11 @@ const toggleTheme = () => {
           </div>
         </div>
       </header>
-      <slot></slot>
+      <main class="pt-32">
+        <slot></slot>
+      </main>
     </div>
   </div>
 </template>
 
-<style lang="scss" scoped>
-.main-layout {
-  // 定义局部变量，增加可读性
-  --layout-min-height: calc(100vh - var(--app-scroll-bar-width));
-
-  min-height: var(--layout-min-height);
-  min-width: 600px;
-}
-.main-header {
-  --el-menu-bg-color: var(--app-color-polaris);
-  --el-menu-text-color: var(--app-color-polaris-light-3);
-  --el-menu-active-color: var(--app-color-momentum-light-1);
-  --el-menu-hover-bg-color: var(--app-color-polaris-dark-1);
-
-  position: relative;
-  height: var(--app-header-height);
-  background-color: var(--el-menu-bg-color);
-}
-.main-content {
-  padding: 0;
-  min-height: calc(
-    var(--layout-min-height) - var(--app-header-height) - var(
-        --app-footer-height
-      )
-  );
-  background-color: var(--el-color-info-light-9);
-}
-.main-footer {
-  padding-top: var(--spacing-4);
-  padding-bottom: var(--spacing-4);
-  height: auto;
-}
-.app-menu-container {
-  display: flex;
-  gap: var(--spacing-6);
-}
-.app-title {
-  padding-left: 15%;
-  line-height: var(--app-header-height);
-  font-size: var(--el-font-size-large);
-  color: var(--el-color-white);
-  letter-spacing: 2px;
-}
-.app-menu {
-  flex: 1;
-  height: var(--app-header-height);
-}
-.app-config {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: var(--spacing-4);
-  right: var(--spacing-5);
-  height: var(--app-header-height);
-  top: 0;
-}
-.app-data-service-token-refresh {
-  cursor: pointer;
-  &:hover {
-    color: var(--app-color-momentum-light-2);
-  }
-}
-.app-data-service-token-refresh,
-.app-data-service-token-refreshing {
-  display: inline-flex;
-  align-items: center;
-  font-size: var(--el-font-size-small);
-  color: var(--app-color-momentum-light-3);
-}
-.app-locale {
-  cursor: pointer;
-}
-.app-locale-text {
-  font-size: var(--el-font-size-small);
-}
-.app-locale-text {
-  color: var(--el-color-white);
-  &:hover {
-    color: var(--el-color-info-light-7);
-  }
-}
-</style>
+<style lang="scss" scoped></style>

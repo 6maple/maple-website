@@ -3,8 +3,12 @@ import './styles/global';
 import { ViteSSG } from 'vite-ssg';
 import App from './App.vue';
 import { routes } from 'vue-router/auto-routes';
+import { setupAppContext } from './utils/shared-context';
+import { setupRequest } from './utils/request-setup';
 
 import type { UserModule } from './types';
+
+setupRequest();
 
 export const createApp = ViteSSG(
   App,
@@ -15,5 +19,6 @@ export const createApp = ViteSSG(
         eager: true,
       }),
     ).forEach((i) => i.install?.(ctx));
+    setupAppContext(ctx.app, ctx.router);
   },
 );

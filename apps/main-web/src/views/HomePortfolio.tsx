@@ -1,29 +1,17 @@
-import { defineComponent, onMounted, onUnmounted, ref } from 'vue';
+import { defineComponent } from 'vue';
 import { ElIcon } from 'element-plus';
 import {
-  Connection,
-  Sunny,
-  Moon,
-  Promotion,
-  CircleCheckFilled,
-  Link,
-  Files,
-  User,
-  Aim,
-  Lightning,
-  Trophy,
-  Reading,
-  Location,
-  TopRight,
-  MagicStick,
-  Calendar,
-  CircleCheck,
-  Message,
-  Phone,
-  Grid,
-  Operation,
   ArrowRight,
+  CircleCheckFilled,
+  Connection,
+  Files,
+  Grid,
   Iphone,
+  Link,
+  MagicStick,
+  Message,
+  Operation,
+  Reading,
 } from '@element-plus/icons-vue';
 
 export default defineComponent({
@@ -148,7 +136,7 @@ export default defineComponent({
       ];
 
       return (
-        <main class="mx-auto max-w-5xl space-y-32 px-6 pt-32 pb-20">
+        <div class="mx-auto max-w-5xl space-y-32 px-6 pb-20">
           {/* Hero Section */}
           <section class="animate-in fade-in slide-in-from-bottom-4 relative space-y-8 duration-1000">
             <div class="absolute -top-24 -left-12 h-64 w-64 rounded-full bg-indigo-500/10 blur-3xl dark:bg-indigo-500/5"></div>
@@ -405,7 +393,7 @@ export default defineComponent({
               <div>Built with Vue 3 & Element Plus</div>
             </footer>
           </section>
-        </main>
+        </div>
       );
     };
   },

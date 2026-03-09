@@ -2,6 +2,8 @@ import { createPinia } from 'pinia';
 
 import type { UserModule } from '../types';
 
+import { setupPiniaContext } from '@/utils/shared-context';
+
 export const install: UserModule = ({ initialState, app }) => {
   const pinia = createPinia();
   app.use(pinia);
@@ -10,4 +12,5 @@ export const install: UserModule = ({ initialState, app }) => {
   } else {
     pinia.state.value = initialState.pinia || {};
   }
+  setupPiniaContext(pinia);
 };

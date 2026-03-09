@@ -1,8 +1,10 @@
 import type { UserModule } from '../types';
 
+import { setupI18nContext } from '@/utils/shared-context';
 import { i18n, loadLanguageAsync } from '@/utils/i18n';
 
 export const install: UserModule = ({ app }) => {
   app.use(i18n);
   loadLanguageAsync('zh-CN');
+  setupI18nContext(i18n);
 };
