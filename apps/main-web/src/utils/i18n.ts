@@ -1,7 +1,7 @@
 import { type Locale, createI18n } from 'vue-i18n';
 
 export const localesMap = Object.fromEntries(
-  Object.entries(import.meta.glob('../../locales/*.json')).map(
+  Object.entries(import.meta.glob('../../../locales/*.json')).map(
     ([path, loadLocale]) => [path.match(/([\w-]*)\.json$/)?.[1], loadLocale],
   ),
 ) as Record<Locale, () => Promise<{ default: Record<string, string> }>>;

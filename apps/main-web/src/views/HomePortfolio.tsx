@@ -138,7 +138,7 @@ export default defineComponent({
       return (
         <div class="mx-auto max-w-5xl space-y-32 px-6 pb-20">
           {/* Hero Section */}
-          <section class="animate-in fade-in slide-in-from-bottom-4 relative space-y-8 duration-1000">
+          <section class="relative space-y-8 duration-1000 animate-in fade-in slide-in-from-bottom-4">
             <div class="absolute -top-24 -left-12 h-64 w-64 rounded-full bg-indigo-500/10 blur-3xl dark:bg-indigo-500/5"></div>
 
             <div class="inline-flex items-center rounded-full border border-zinc-200 bg-zinc-100 px-3 py-1 text-[10px] font-black tracking-widest text-indigo-600 uppercase dark:border-zinc-800 dark:bg-zinc-900 dark:text-indigo-400">

@@ -42,6 +42,7 @@
     "oxlint": "catalog:dev",
     "prettier": "catalog:dev",
     "prettier-plugin-tailwindcss": "^0.7.2",
+    "tailwindcss-animate": "^1.0.7",
     "sass": "^1.97.3",
     "typescript": "catalog:dev",
     "unplugin-auto-import": "^21.0.0",

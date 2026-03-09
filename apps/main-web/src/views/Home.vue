@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import HomePortfolio from './HomePortfolio.tsx';
+import Portfolio from './Portfolio.vue';
 </script>
 
 <template>
   <div class="home">
-    <HomePortfolio />
+    <Portfolio />
   </div>
 </template>
 

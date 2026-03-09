@@ -1,0 +1,8 @@
+{
+  "app.text.site_name": "MapleYang's Website",
+  "app.text.home": "Home",
+  "app.text.login_missing_credentials": "用户名或密码不能为空",
+  "app.text.login_failed": "登录失败，请检查账号密码",
+  "app.text.locale.zh-CN": "中文",
+  "app.text.locale.en": "English"
+}
