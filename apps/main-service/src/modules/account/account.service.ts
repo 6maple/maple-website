@@ -21,6 +21,6 @@ export class AccountService {
 
   async getUserProfile(user: string) {
     const data = await this.loginRepository.findOne({ where: { user } });
-    return { user, ...data };
+    return data;
   }
 }

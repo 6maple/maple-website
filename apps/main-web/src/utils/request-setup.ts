@@ -35,12 +35,12 @@ export const setupRequest = () => {
     (response) => {
       // 可以记录token
       // 可以处理响应，自动显示提示
-      if (response.headers[HEADER_X_ACCESS_TOKEN]) {
-        setAccessToken(response.headers[HEADER_X_ACCESS_TOKEN]);
-      }
       stopGlobalLoading();
       const resData: ApiResponseData<any> = response.data;
       if (resData.code === '0') {
+        if (response.headers[HEADER_X_ACCESS_TOKEN]) {
+          setAccessToken(response.headers[HEADER_X_ACCESS_TOKEN]);
+        }
         return resData.data;
       } else {
         ElMessage({
