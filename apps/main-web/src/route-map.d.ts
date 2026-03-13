@@ -40,6 +40,27 @@ declare module 'vue-router/auto-routes' {
       { all: ParamValue<false> },
       never
     >;
+    '/articles': RouteRecordInfo<
+      '/articles',
+      '/articles',
+      Record<never, never>,
+      Record<never, never>,
+      '/articles/placeholder' | '/articles/test'
+    >;
+    '/articles/placeholder': RouteRecordInfo<
+      '/articles/placeholder',
+      '/articles/placeholder',
+      Record<never, never>,
+      Record<never, never>,
+      never
+    >;
+    '/articles/test': RouteRecordInfo<
+      '/articles/test',
+      '/articles/test',
+      Record<never, never>,
+      Record<never, never>,
+      never
+    >;
     '/login': RouteRecordInfo<
       '/login',
       '/login',
@@ -66,6 +87,18 @@ declare module 'vue-router/auto-routes' {
     };
     'src/pages/[...all].vue': {
       routes: '/[...all]';
+      views: never;
+    };
+    'src/pages/articles.vue': {
+      routes: '/articles' | '/articles/placeholder' | '/articles/test';
+      views: 'default';
+    };
+    'src/pages/articles/placeholder.vue': {
+      routes: '/articles/placeholder';
+      views: never;
+    };
+    'src/pages/articles/test.md': {
+      routes: '/articles/test';
       views: never;
     };
     'src/pages/login.vue': {

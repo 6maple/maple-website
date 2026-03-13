@@ -40,7 +40,11 @@ const { menuConfigs, menuIndex, handleSelect } = useMainLayout();
               mode="horizontal"
               @select="handleSelect"
             >
-              <ElMenuItem v-for="item in menuConfigs" :key="item.key">
+              <ElMenuItem
+                v-for="item in menuConfigs"
+                :key="item.key"
+                :index="item.key"
+              >
                 {{ $t(item.labelKey) }}
               </ElMenuItem>
             </ElMenu>
@@ -52,7 +56,6 @@ const { menuConfigs, menuIndex, handleSelect } = useMainLayout();
             <ElDropdown @command="personalConfigStore.updateLocale">
               <button
                 class="flex cursor-pointer items-center rounded-full px-3 py-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-900"
-                @click="toggleTheme"
               >
                 <i class="mr-1">Aa /</i>{{ personalConfigStore.localeText }}
               </button>

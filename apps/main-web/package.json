@@ -14,7 +14,6 @@
     "lint:eslint": "eslint . --fix --cache"
   },
   "dependencies": {
-    "@element-plus/icons-vue": "^2.3.2",
     "@repo/ui": "workspace:*",
     "@repo/utils": "workspace:*",
     "@unhead/vue": "^2.1.10",
@@ -23,12 +22,15 @@
     "element-plus": "^2.13.3",
     "nprogress": "^0.2.0",
     "pinia": "^3.0.4",
-    "tailwindcss": "^4.2.1",
     "vue": "catalog:runtime",
     "vue-i18n": "^11.2.8",
     "vue-router": "^5.0.3"
   },
   "devDependencies": {
+    "@iconify-json/lucide": "^1.2.97",
+    "@iconify/tailwind4": "^1.2.3",
+    "@repo/markdown-core": "workspace:*",
+    "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.2.1",
     "@tsconfig/node24": "^24.0.4",
     "@types/node": "^24.11.0",
@@ -42,8 +44,9 @@
     "oxlint": "catalog:dev",
     "prettier": "catalog:dev",
     "prettier-plugin-tailwindcss": "^0.7.2",
-    "tailwindcss-animate": "^1.0.7",
     "sass": "^1.97.3",
+    "tailwindcss": "^4.2.1",
+    "tailwindcss-animate": "^1.0.7",
     "typescript": "catalog:dev",
     "unplugin-auto-import": "^21.0.0",
     "unplugin-vue-components": "^31.0.0",

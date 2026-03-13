@@ -1,0 +1,30 @@
+/* 默认隐藏锚点，鼠标悬停标题时显示 */
+.icon-link {
+  @apply icon-[lucide--link] opacity-0 transition-opacity text-blue-500 text-[0.8em] mt-[0.1em];
+}
+.md-article {
+  & :is(h1, h2, h3, h4, h5, h6) {
+    @apply relative;
+    & a {
+      @apply absolute -ml-[1em];
+    }
+    &:hover .icon-link {
+      @apply opacity-100;
+    }
+  }
+  & pre.shiki {
+    @apply relative;
+  }
+  & pre.shiki > button.copy {
+    @apply absolute top-[0.5em] right-[0.5em] cursor-pointer transition-opacity duration-200 text-[1.5em];
+    &:not(.copied) {
+      @apply icon-[lucide--clipboard];
+    }
+    &.copied {
+      @apply icon-[lucide--clipboard-check] text-green-600 opacity-100!;
+    }
+  }
+  & pre.shiki:not(:hover) > button.copy {
+    @apply opacity-0;
+  }
+}

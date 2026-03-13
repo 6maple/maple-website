@@ -8,14 +8,19 @@ import Components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import VueRouter from 'vue-router/vite';
 import tailwindcss from '@tailwindcss/vite';
+import { createViteVueMDPlugin } from '@repo/markdown-core/vite';
 
 export default defineConfig({
   plugins: [
+    createViteVueMDPlugin({ includes: ['src/pages/articles/**/*.md'] }),
     tailwindcss(),
     VueRouter({
       dts: 'src/route-map.d.ts',
+      extensions: ['.vue', '.md'],
     }),
-    vue(),
+    vue({
+      include: [/\.vue$/, /\.md$/],
+    }),
     vueJsx(),
     AutoImport({
       resolvers: [ElementPlusResolver()],

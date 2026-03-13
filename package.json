@@ -46,7 +46,7 @@
     "prettier": "catalog:dev",
     "rimraf": "^4.4.1",
     "tinyglobby": "^0.2.15",
-    "tsx": "^4.19.3",
+    "tsx": "catalog:dev",
     "turbo": "^2.8.13",
     "typescript": "catalog:dev"
   },

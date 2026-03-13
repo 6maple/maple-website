@@ -1,6 +1,14 @@
 @import 'tailwindcss';
 @plugin 'tailwindcss-animate';
+@plugin '@tailwindcss/typography';
+@plugin '@iconify/tailwind4';
+
 @import '@repo/ui/base.css';
+@import '@repo/markdown-core/styles/tailwind.css';
+
 @variant dark (&:where(.dark, .dark *));
 
+/* 引入图标集 */
+@source '../../node_modules/@iconify-json/lucide';
 @source '../../../../packages/ui/src/**/*.vue';
+@source '../../../../packages/markdown-core/styles/**/*.css';

@@ -1,0 +1,69 @@
+.md-article pre.shiki {
+  background-color: var(--shiki-light-bg);
+  padding: 1rem 1.25rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.5s;
+}
+.md-article pre.shiki,
+.md-article pre.shiki span {
+  color: var(--shiki-light);
+  font-style: var(--shiki-light-font-style);
+  font-weight: var(--shiki-light-font-weight);
+  transition: color 0.5s;
+}
+.md-article pre.shiki .twoslash-popup-container {
+  background-color: var(--shiki-light-bg);
+}
+
+.dark .md-article pre.shiki,
+.dark .md-article pre.shiki .twoslash-popup-container {
+  background-color: var(--shiki-dark-bg);
+}
+.dark .md-article pre.shiki,
+.dark .md-article pre.shiki span {
+  color: var(--shiki-dark);
+  font-style: var(--shiki-dark-font-style);
+  font-weight: var(--shiki-dark-font-weight);
+}
+/* indent */
+.md-article pre.shiki .indent {
+  display: inline-block;
+  position: relative;
+  left: var(--indent-offset);
+  text-indent: 0;
+}
+
+.md-article pre.shiki .indent:empty {
+  height: 1lh;
+  vertical-align: bottom;
+}
+
+.md-article pre.shiki .indent::before {
+  content: '';
+  position: absolute;
+  opacity: 0.15;
+  width: 1px;
+  height: 100%;
+  background-color: currentColor;
+}
+/* highlighted */
+.md-article pre.shiki .line.highlighted {
+  background-color: color-mix(
+    in srgb,
+    var(--shiki-light-bg, inherit),
+    var(--shiki-dark-bg, inherit) 5%
+  );
+
+  transition: background-color 0.5s;
+  margin: 0 -1.25rem;
+  padding: 0 1.25rem;
+  width: calc(100% + 2.5rem);
+  display: inline-block;
+}
+.dark .md-article pre.shiki .line.highlighted {
+  background-color: color-mix(
+    in srgb,
+    var(--shiki-dark-bg, inherit),
+    var(--shiki-light-bg, inherit) 5%
+  );
+}
