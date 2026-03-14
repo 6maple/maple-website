@@ -19,9 +19,7 @@ const { menuConfigs, menuIndex, handleSelect } = useMainLayout();
     <header
       class="fixed top-0 z-50 w-full border-b border-zinc-200 bg-white/80 backdrop-blur-md transition-all dark:border-zinc-800 dark:bg-zinc-950/80"
     >
-      <div
-        class="mx-auto flex h-16 max-w-7xl items-center justify-between px-2"
-      >
+      <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-2">
         <div class="flex items-center">
           <div class="group flex items-center space-x-2">
             <div
@@ -40,11 +38,7 @@ const { menuConfigs, menuIndex, handleSelect } = useMainLayout();
               mode="horizontal"
               @select="handleSelect"
             >
-              <ElMenuItem
-                v-for="item in menuConfigs"
-                :key="item.key"
-                :index="item.key"
-              >
+              <ElMenuItem v-for="item in menuConfigs" :key="item.key" :index="item.key">
                 {{ $t(item.labelKey) }}
               </ElMenuItem>
             </ElMenu>
@@ -66,9 +60,7 @@ const { menuConfigs, menuIndex, handleSelect } = useMainLayout();
                     :key="item"
                     :command="item"
                     :disabled="item === personalConfigStore.locale"
-                    >{{
-                      personalConfigStore.resolveLocaleText(item)
-                    }}</ElDropdownItem
+                    >{{ personalConfigStore.resolveLocaleText(item) }}</ElDropdownItem
                   >
                 </ElDropdownMenu>
               </template>

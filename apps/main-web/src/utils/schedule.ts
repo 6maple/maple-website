@@ -23,10 +23,7 @@ export const createDynamicTimeout = (
   return { getTimeout, resetTimeout, increaseTimeout };
 };
 
-export const createIntervalManager = (
-  interval: number,
-  callback: () => void,
-) => {
+export const createIntervalManager = (interval: number, callback: () => void) => {
   // 初始化定时器
   let timer: number = 0;
   const handle = () => {

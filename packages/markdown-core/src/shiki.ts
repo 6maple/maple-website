@@ -1,8 +1,5 @@
 import { rendererRich, transformerTwoslash } from '@shikijs/twoslash';
-import {
-  transformerNotationHighlight,
-  transformerRenderIndentGuides,
-} from '@shikijs/transformers';
+import { transformerNotationHighlight, transformerRenderIndentGuides } from '@shikijs/transformers';
 
 import type { ShikiTransformer } from '@shikijs/types';
 

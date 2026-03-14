@@ -7,9 +7,7 @@ const useMenu = () => {
   const menuIndex = ref(menuConfigs[0]!.key);
   const router = useRouter();
   onMounted(() => {
-    const menu = menuConfigs.find(
-      (item) => item.path === router.currentRoute.value.path,
-    );
+    const menu = menuConfigs.find((item) => item.path === router.currentRoute.value.path);
     if (menu) {
       menuIndex.value = menu.key;
     }

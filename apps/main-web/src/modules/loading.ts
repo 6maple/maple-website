@@ -1,10 +1,6 @@
 import type { UserModule } from '../types';
 
-import {
-  setupGlobalLoading,
-  startGlobalLoading,
-  stopGlobalLoading,
-} from '@/utils/global-loading';
+import { setupGlobalLoading, startGlobalLoading, stopGlobalLoading } from '@/utils/global-loading';
 
 export const install: UserModule = ({ router }) => {
   if (!import.meta.env.SSR) {
