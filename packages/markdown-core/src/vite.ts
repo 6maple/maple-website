@@ -19,7 +19,11 @@ export const createViteVueMDPlugin = (options: ViteMDPluginOptions = {}) => {
   const processor = createProcessor();
   const convert = async (_filePath: string, code: string) => {
     const file = await processor.process(code);
-    return { code: `<template>${file.toString()}</template>`, map: null };
+    file.data.matter;
+    return {
+      code: `<script lang="js">export const matter = ${JSON.stringify(file.data.matter)}</script><template>${file.toString()}</template>`,
+      map: null,
+    };
   };
   return {
     name: 'vite-plugin-vue-md',

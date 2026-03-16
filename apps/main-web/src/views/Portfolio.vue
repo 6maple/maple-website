@@ -8,7 +8,9 @@ const renderWithStrong = (content: string, strong?: string[]) => {
   if (!strong || strong.length === 0) {
     return content;
   }
-  const textList = content.split(new RegExp(`(${strong.join('|')})`.replace(/\+/g, '\\+')));
+  const textList = content.split(
+    new RegExp(`(${strong.join('|')})`.replace(/\+/g, '\\+')),
+  );
   return textList.map((text) => {
     if (strong.includes(text)) {
       return (
@@ -37,7 +39,9 @@ const StrongText = (props: { content: string; strong?: string[] }) => {
         <span>{{ portfolioData.name }}</span>
         <span class="ml-6 text-base tracking-widest">
           <span>求职意向: </span>
-          <span class="text-indigo-700 dark:text-indigo-400">{{ portfolioData.jobIntention }}</span>
+          <span class="text-indigo-700 dark:text-indigo-400">{{
+            portfolioData.jobIntention
+          }}</span>
         </span>
       </h1>
       <div class="flex items-center gap-x-2 text-sm font-medium text-zinc-500">
@@ -49,7 +53,9 @@ const StrongText = (props: { content: string; strong?: string[] }) => {
         <span>{{ portfolioData.email }}</span>
       </div>
       <div class="flex items-center gap-x-2 text-sm font-medium text-zinc-500">
-        <ElIcon class="text-indigo-700! dark:text-indigo-300!"><School /></ElIcon>
+        <ElIcon class="text-indigo-700! dark:text-indigo-300!"
+          ><School
+        /></ElIcon>
         <span>{{ portfolioData.education.school }}</span>
         <span>|</span>
         <span>{{ portfolioData.education.degree }}</span>
@@ -60,9 +66,11 @@ const StrongText = (props: { content: string; strong?: string[] }) => {
         <div
           v-for="item in portfolioData.certificates"
           :key="item"
-          class="flex items-center gap-x-1 rounded-full border border-zinc-200/80 bg-zinc-50 px-3 py-0.5 text-xs font-medium text-zinc-700 dark:border-zinc-800/80 dark:bg-zinc-900 dark:text-zinc-300"
+          class="flex items-center gap-x-1 rounded-full border border-zinc-200/80 bg-zinc-100/80 px-3 py-0.5 text-xs font-medium text-zinc-700 dark:border-zinc-800/80 dark:bg-zinc-900/80 dark:text-zinc-300"
         >
-          <ElIcon class="text-amber-600! dark:text-amber-400!"><Medal /></ElIcon>
+          <ElIcon class="text-amber-600! dark:text-amber-400!"
+            ><Medal
+          /></ElIcon>
           <span>{{ item }}</span>
         </div>
       </div>
@@ -76,7 +84,9 @@ const StrongText = (props: { content: string; strong?: string[] }) => {
           class="w-half w-80% absolute right-0 h-1 w-[calc(100%-8rem)] skew-x-60 bg-zinc-800 dark:bg-zinc-400"
         ></div>
       </h2>
-      <ul class="space-y-1 text-sm leading-relaxed font-medium text-zinc-600 dark:text-zinc-400">
+      <ul
+        class="space-y-1 text-sm leading-relaxed font-medium text-zinc-600 dark:text-zinc-400"
+      >
         <li v-for="item in portfolioData.careerSummary" :key="item.content">
           <span>• </span>
           <StrongText :content="item.content" :strong="item.strong" />
@@ -92,7 +102,9 @@ const StrongText = (props: { content: string; strong?: string[] }) => {
           class="w-half w-80% absolute right-0 h-1 w-[calc(100%-8rem)] skew-x-60 bg-zinc-800 dark:bg-zinc-400"
         ></div>
       </h2>
-      <ul class="space-y-1 text-sm leading-relaxed font-medium text-zinc-600 dark:text-zinc-400">
+      <ul
+        class="space-y-1 text-sm leading-relaxed font-medium text-zinc-600 dark:text-zinc-400"
+      >
         <li v-for="item in portfolioData.coreSkills" :key="item.label">
           <span>• </span>
           <span class="font-bold text-slate-600 uppercase dark:text-slate-400"
@@ -102,7 +114,7 @@ const StrongText = (props: { content: string; strong?: string[] }) => {
             <span
               v-for="tag in item.content.split(', ')"
               :key="tag"
-              class="rounded-full border border-zinc-200/80 bg-zinc-50 px-4 py-0.5 text-xs text-nowrap dark:border-zinc-800/80 dark:bg-zinc-900"
+              class="rounded-full border border-zinc-200/80 bg-zinc-100/80 px-4 py-0.5 text-xs text-nowrap dark:border-zinc-800/80 dark:bg-zinc-900/80"
             >
               {{ tag }}
             </span>
@@ -120,16 +132,26 @@ const StrongText = (props: { content: string; strong?: string[] }) => {
         ></div>
       </h2>
       <div class="space-y-2">
-        <div v-for="item in portfolioData.workExperiences" :key="item.company" class="space-y-1">
+        <div
+          v-for="item in portfolioData.workExperiences"
+          :key="item.company"
+          class="space-y-1"
+        >
           <div
             class="grid grid-cols-4 justify-between text-sm font-bold text-zinc-800 md:flex-row md:items-center dark:text-zinc-200"
           >
-            <span class="text-zinc-500 dark:text-zinc-400">{{ item.period.join(' - ') }}</span>
+            <span class="text-zinc-500 dark:text-zinc-400">{{
+              item.period.join(' - ')
+            }}</span>
             <span>{{ item.company }}</span>
             <span>{{ item.remark }}</span>
-            <span class="text-end text-indigo-600 dark:text-indigo-400">{{ item.role }}</span>
+            <span class="text-end text-indigo-600 dark:text-indigo-400">{{
+              item.role
+            }}</span>
           </div>
-          <ul class="text-xs leading-relaxed font-medium text-zinc-600 dark:text-zinc-400">
+          <ul
+            class="text-xs leading-relaxed font-medium text-zinc-600 dark:text-zinc-400"
+          >
             <li
               v-for="[pName, pContent, pStrong] in (item.points as [string, string, string[]][])"
               :key="pName"
@@ -139,7 +161,9 @@ const StrongText = (props: { content: string; strong?: string[] }) => {
                 <span>{{ pName }}</span>
                 <span>: </span>
               </template>
-              <span><StrongText :content="pContent || pName" :strong="pStrong" /></span>
+              <span
+                ><StrongText :content="pContent || pName" :strong="pStrong"
+              /></span>
             </li>
           </ul>
         </div>

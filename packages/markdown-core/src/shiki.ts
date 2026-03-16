@@ -1,11 +1,15 @@
 import { rendererRich, transformerTwoslash } from '@shikijs/twoslash';
-import { transformerNotationHighlight, transformerRenderIndentGuides } from '@shikijs/transformers';
+import {
+  transformerNotationHighlight,
+  transformerRenderIndentGuides,
+} from '@shikijs/transformers';
 
 import type { ShikiTransformer } from '@shikijs/types';
 
 export const transformerNotProse = (): ShikiTransformer => {
   return {
     name: 'not-prose',
+    enforce: 'post',
     pre(node) {
       this.addClassToHast(node, 'not-prose');
     },

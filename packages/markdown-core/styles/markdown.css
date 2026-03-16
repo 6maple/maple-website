@@ -51,7 +51,7 @@
   background-color: color-mix(
     in srgb,
     var(--shiki-light-bg, inherit),
-    var(--shiki-dark-bg, inherit) 5%
+    var(--shiki-dark-bg, inherit) 3%
   );
 
   transition: background-color 0.5s;
@@ -64,6 +64,6 @@
   background-color: color-mix(
     in srgb,
     var(--shiki-dark-bg, inherit),
-    var(--shiki-light-bg, inherit) 5%
+    var(--shiki-light-bg, inherit) 4%
   );
 }

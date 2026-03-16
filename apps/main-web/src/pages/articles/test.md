@@ -1,8 +1,7 @@
 ---
-user:
-  name: Maple
-  age: 18
-des: hi this is description
+title: 测试文章
+date: 2023-10-01
+description: 这是一个测试文章
 ---
 
 # Hello world!
