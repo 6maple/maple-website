@@ -9,7 +9,6 @@ import type { ShikiTransformer } from '@shikijs/types';
 export const transformerNotProse = (): ShikiTransformer => {
   return {
     name: 'not-prose',
-    enforce: 'post',
     pre(node) {
       this.addClassToHast(node, 'not-prose');
     },

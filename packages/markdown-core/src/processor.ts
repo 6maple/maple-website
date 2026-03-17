@@ -6,7 +6,7 @@ import rehypeKatex from 'rehype-katex';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
-import remarkToc from 'remark-toc';
+import remarkExtractToc from 'remark-extract-toc';
 import remarkDirective from 'remark-directive';
 import remarkRehype from 'remark-rehype';
 import rehypeSlug from 'rehype-slug';
@@ -19,6 +19,7 @@ import { remarkDirectivePlugin } from './remark-directive.ts';
 import { remarkFrontmatterExtractor } from './remark-frontmatter.ts';
 import { rehypeXSS } from './rehype-xss.ts';
 import { shikiTransformers } from './shiki.ts';
+import { remarkListTitle } from './remark-list-item.ts';
 
 export interface ProcessorOptions {
   /**
@@ -37,11 +38,12 @@ export const createProcessor = (options: ProcessorOptions = {}) => {
     .use(remarkFrontmatterExtractor)
     .use(remarkGfm)
     .use(remarkMath)
-    .use(remarkToc, { heading: 'structure' })
     .use(remarkEmoji)
+    .use(remarkExtractToc)
     .use(remarkDirective)
     // 3. 自定义指令处理插件（必须，否则指令不会被渲染）
     .use(remarkDirectivePlugin) // 自定义 directive 插件
+    .use(remarkListTitle)
     // 4. 转换 MDAST 到 HAST
     .use(remarkRehype, { allowDangerousHtml: true })
     // 5. rehype 插件：处理 HAST，增强 HTML

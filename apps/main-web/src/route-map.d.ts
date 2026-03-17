@@ -46,8 +46,8 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       Record<never, never>,
       | '/articles/'
-      | '/articles/language-core/closure'
-      | '/articles/language-core/scope'
+      | '/articles/language/core'
+      | '/articles/language/promise'
       | '/articles/placeholder'
       | '/articles/test'
     >;
@@ -58,16 +58,16 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       never
     >;
-    '/articles/language-core/closure': RouteRecordInfo<
-      '/articles/language-core/closure',
-      '/articles/language-core/closure',
+    '/articles/language/core': RouteRecordInfo<
+      '/articles/language/core',
+      '/articles/language/core',
       Record<never, never>,
       Record<never, never>,
       never
     >;
-    '/articles/language-core/scope': RouteRecordInfo<
-      '/articles/language-core/scope',
-      '/articles/language-core/scope',
+    '/articles/language/promise': RouteRecordInfo<
+      '/articles/language/promise',
+      '/articles/language/promise',
       Record<never, never>,
       Record<never, never>,
       never
@@ -118,8 +118,8 @@ declare module 'vue-router/auto-routes' {
       routes:
         | '/articles'
         | '/articles/'
-        | '/articles/language-core/closure'
-        | '/articles/language-core/scope'
+        | '/articles/language/core'
+        | '/articles/language/promise'
         | '/articles/placeholder'
         | '/articles/test';
       views: 'default';
@@ -128,12 +128,12 @@ declare module 'vue-router/auto-routes' {
       routes: '/articles/';
       views: never;
     };
-    'src/pages/articles/language-core/closure.md': {
-      routes: '/articles/language-core/closure';
+    'src/pages/articles/language/core.md': {
+      routes: '/articles/language/core';
       views: never;
     };
-    'src/pages/articles/language-core/scope.md': {
-      routes: '/articles/language-core/scope';
+    'src/pages/articles/language/promise.md': {
+      routes: '/articles/language/promise';
       views: never;
     };
     'src/pages/articles/placeholder.vue': {

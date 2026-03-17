@@ -1,7 +1,7 @@
 import { visit } from 'unist-util-visit';
 
 import type { Element } from 'hast';
-import type { PluginHandler } from './types.ts';
+import type { RemarkPluginHandler } from './types.ts';
 
 export function rehypeXSS() {
   const BANNED_TAGS = ['script', 'iframe', 'base'];
@@ -22,5 +22,5 @@ export function rehypeXSS() {
         }
       }
     });
-  }) as PluginHandler;
+  }) as RemarkPluginHandler;
 }

@@ -29,7 +29,7 @@ const StrongText = (props: { content: string; strong?: string[] }) => {
 
 <template>
   <article
-    class="relative mx-auto max-w-4xl space-y-3 border border-zinc-200 bg-zinc-50 p-10 pt-6 text-zinc-800 transition-all animate-in fade-in md:p-16 md:pt-10 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100"
+    class="relative mx-auto -mt-12 max-w-4xl space-y-3 border border-zinc-200 bg-zinc-50 p-10 pt-6 text-zinc-800 transition-all animate-in fade-in md:p-16 md:pt-10 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100"
   >
     <div
       class="not-print absolute top-0 left-0 h-1 w-full bg-linear-to-r from-indigo-600 via-violet-600 to-cyan-600"

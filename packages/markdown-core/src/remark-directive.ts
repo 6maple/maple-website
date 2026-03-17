@@ -1,11 +1,11 @@
 import { visit } from 'unist-util-visit';
 
-import type { PluginHandler } from './types.ts';
+import type { RemarkPluginHandler } from './types.ts';
 
 const TYPE_LIST = ['info', 'warning', 'tip', 'danger'];
 
 // 这是一个自定义的转换插件
-export function remarkDirectivePlugin() {
+export const remarkDirectivePlugin = () => {
   return ((tree) => {
     visit(tree, (node) => {
       // 检查是否是容器指令 (::: 类型)
@@ -26,5 +26,5 @@ export function remarkDirectivePlugin() {
         }
       }
     });
-  }) as PluginHandler;
-}
+  }) as RemarkPluginHandler;
+};
