@@ -8,7 +8,7 @@ description: 这是一个测试文章
 
 ![示例图片](/favicon.ico?url)
 
-:::info
+:::tip tip提示
 This is an info block.
 :::
 

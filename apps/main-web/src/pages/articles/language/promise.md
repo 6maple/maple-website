@@ -4,7 +4,7 @@ tag:
   zh-CN: 技术博客
   en: Technical Blog
 date: 2026-03-17
-description:
+description: 介绍异步调度的核心概念，包括事件循环、微任务队列、宏任务队列等。
 ---
 
 # 异步调度

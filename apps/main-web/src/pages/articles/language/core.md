@@ -4,7 +4,7 @@ tag:
   zh-CN: 技术博客
   en: Technical Blog
 date: 2026-03-17
-description:
+description: 介绍 JavaScript 核心概念，包括作用域、闭包、原型链等。
 ---
 
 # JavaScript 核心概念
