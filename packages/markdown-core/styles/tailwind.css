@@ -2,11 +2,14 @@
 .md-article {
   & :is(h1, h2, h3, h4, h5, h6) {
     @apply relative;
+    & .header-anchor {
+      @apply flex items-center;
+    }
     &:hover .header-anchor:before {
       @apply opacity-100;
     }
     & .header-anchor:before {
-      @apply absolute -ml-[1em] content-['#'] icon-[lucide--link] opacity-0 transition-opacity text-blue-500 text-[0.8em] mt-[0.1em];
+      @apply absolute -ml-[1.1em] content-['#'] icon-[lucide--link] opacity-0 transition-opacity text-blue-500 text-[0.8em];
     }
   }
   & pre.shiki {
