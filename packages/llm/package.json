@@ -1,0 +1,21 @@
+{
+  "name": "@repo/llm",
+  "version": "0.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "dev": "tsx ./dev.ts"
+  },
+  "dependencies": {
+    "@repo/markdown-core": "workspace:*",
+    "@google/genai": "^1.46.0",
+    "openai": "^6.32.0",
+    "tsx": "catalog:dev",
+    "zod": "^4.3.6",
+    "zod-to-json-schema": "^3.25.1"
+  }
+}

@@ -14,7 +14,7 @@ const { menuConfigs, menuIndex, handleSelect } = useMainLayout();
 
 <template>
   <div
-    class="main-layout min-h-screen bg-zinc-100 text-zinc-900 transition-colors duration-300 selection:bg-indigo-500 selection:text-white dark:bg-zinc-900 dark:text-zinc-100"
+    class="main-layout min-h-screen bg-gray-100 text-zinc-900 transition-colors duration-300 selection:bg-indigo-500 selection:text-white dark:bg-gray-900 dark:text-zinc-100"
   >
     <header
       class="fixed top-0 z-50 w-full border-b border-zinc-200 bg-white/70 backdrop-blur-md transition-all dark:border-zinc-800 dark:bg-zinc-950/70"
@@ -25,7 +25,7 @@ const { menuConfigs, menuIndex, handleSelect } = useMainLayout();
         <div class="flex items-center">
           <div class="group flex items-center space-x-2">
             <div
-              class="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600 font-black text-white transition-transform group-hover:rotate-6"
+              class="flex h-8 w-8 items-center justify-center rounded-l bg-indigo-600 font-black text-white transition-transform group-hover:rotate-6"
             >
               Y
             </div>
@@ -57,7 +57,8 @@ const { menuConfigs, menuIndex, handleSelect } = useMainLayout();
               <button
                 class="flex cursor-pointer items-center rounded-full px-3 py-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-900"
               >
-                <i class="mr-1">Aa /</i>{{ personalConfigStore.localeText }}
+                <i class="mr-1 icon-[lucide--languages]">Aa /</i
+                >{{ personalConfigStore.localeText }}
               </button>
               <template #dropdown>
                 <ElDropdownMenu>
@@ -75,20 +76,13 @@ const { menuConfigs, menuIndex, handleSelect } = useMainLayout();
             </ElDropdown>
           </div>
           <button
-            class="flex cursor-pointer items-center rounded-full px-3 py-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-900"
+            class="icon-[lucide--moon] flex cursor-pointer items-center rounded-full px-3 py-2 transition-colors hover:bg-zinc-100 dark:icon-[lucide--sun] dark:hover:bg-zinc-900"
             @click="toggleTheme"
-          >
-            <ElIcon v-if="isDark">
-              <Sunny />
-            </ElIcon>
-            <ElIcon v-else>
-              <Moon />
-            </ElIcon>
-          </button>
+          ></button>
         </div>
       </div>
     </header>
-    <main class="pt-32">
+    <main class="pt-16">
       <slot></slot>
     </main>
     <footer class="min-h-16"></footer>

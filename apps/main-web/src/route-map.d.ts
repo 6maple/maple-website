@@ -86,6 +86,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       never
     >;
+    '/knowledge-card-list': RouteRecordInfo<
+      '/knowledge-card-list',
+      '/knowledge-card-list',
+      Record<never, never>,
+      Record<never, never>,
+      never
+    >;
     '/login': RouteRecordInfo<
       '/login',
       '/login',
@@ -142,6 +149,10 @@ declare module 'vue-router/auto-routes' {
     };
     'src/pages/articles/test.md': {
       routes: '/articles/test';
+      views: never;
+    };
+    'src/pages/knowledge-card-list.vue': {
+      routes: '/knowledge-card-list';
       views: never;
     };
     'src/pages/login.vue': {
