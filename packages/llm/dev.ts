@@ -3,10 +3,13 @@ import './proxy-undici';
 import { readFile, writeFile } from 'fs/promises';
 import { GoogleGenAI } from '@google/genai';
 import { createMD, setupMD } from '@repo/markdown-core';
+import dotenv from 'dotenv';
+
+dotenv.config({ path: ['.env.local', '.env'] });
 
 // The client gets the API key from the environment variable `GEMINI_API_KEY`.
 const ai = new GoogleGenAI({
-  apiKey: 'AIzaSyBFOtPQAT9VXyBgkAxVndyLP7mEwuFBPHQ',
+  apiKey: process.env.GEMINI_API_KEY!,
 });
 
 run();
