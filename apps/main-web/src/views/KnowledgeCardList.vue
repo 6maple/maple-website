@@ -25,12 +25,12 @@ const toggleCard = async (index: number) => {
 
 <template>
   <MdArticle>
-    <div ref="container" class="relative text-base">
+    <div ref="container" class="relative text-lg">
       <div
         v-for="(item, index) in data"
         ref="child"
         :key="item.question"
-        class="relative rounded-md bg-zinc-50 pt-2 shadow-md shadow-zinc-300 dark:bg-zinc-800 dark:shadow-zinc-900"
+        class="relative rounded-md bg-slate-50 pt-2 shadow-md shadow-zinc-300 dark:bg-slate-800 dark:shadow-zinc-900"
       >
         <div
           class="absolute top-2 flex w-full items-center justify-between px-4"
@@ -62,7 +62,7 @@ const toggleCard = async (index: number) => {
         </div>
         <div
           v-show="knowledgeShows[index]"
-          class="rounded-b-md border-dashed border-zinc-600 px-4 pb-4 text-sm"
+          class="rounded-b-md border-dashed border-slate-500/50 bg-slate-200/40 px-4 pb-4 text-base dark:bg-slate-900/40"
           :class="{
             'border-t': knowledgeShows[index],
           }"
@@ -78,7 +78,7 @@ const toggleCard = async (index: number) => {
             </button>
             <div class="flex items-center gap-2">
               <button
-                class="cursor-pointer rounded-md bg-amber-700/80 px-6 py-1.5 text-sm tracking-wider text-zinc-100 transition-colors hover:bg-amber-700"
+                class="cursor-pointer rounded-md border border-amber-600/50 px-6 py-1.5 text-sm tracking-wider text-amber-600 transition-colors hover:bg-amber-600/10"
               >
                 {{ $t('app.text.fuzzy') }}
               </button>
