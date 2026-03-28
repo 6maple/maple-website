@@ -50,11 +50,6 @@ docs/.vitepress/cache
 # Vitest
 __screenshots__/
 
-# 自动生成的类型声明文件
-auto-imports.d.ts
-components.d.ts
-typed-router.d.ts
-
 # other
 .cache
 
