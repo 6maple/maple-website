@@ -10,6 +10,7 @@
   "scripts": {
     "clean": "cmd /c rimraf \"./**/node_modules\"",
     "cz": "czg",
+    "build-pages": "turbo run build-pages && node scripts/prepare-pages.js",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",

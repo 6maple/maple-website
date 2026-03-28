@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "build-pages": "pnpm build",
     "build": "run-p check-types \"build-only {@}\" --",
     "preview": "vite preview",
     "build-only": "vite build",
