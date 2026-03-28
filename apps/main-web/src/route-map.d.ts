@@ -45,7 +45,32 @@ declare module 'vue-router/auto-routes' {
       '/articles',
       Record<never, never>,
       Record<never, never>,
-      '/articles/placeholder' | '/articles/test'
+      | '/articles/'
+      | '/articles/language/core'
+      | '/articles/language/promise'
+      | '/articles/placeholder'
+      | '/articles/test'
+    >;
+    '/articles/': RouteRecordInfo<
+      '/articles/',
+      '/articles',
+      Record<never, never>,
+      Record<never, never>,
+      never
+    >;
+    '/articles/language/core': RouteRecordInfo<
+      '/articles/language/core',
+      '/articles/language/core',
+      Record<never, never>,
+      Record<never, never>,
+      never
+    >;
+    '/articles/language/promise': RouteRecordInfo<
+      '/articles/language/promise',
+      '/articles/language/promise',
+      Record<never, never>,
+      Record<never, never>,
+      never
     >;
     '/articles/placeholder': RouteRecordInfo<
       '/articles/placeholder',
@@ -57,6 +82,13 @@ declare module 'vue-router/auto-routes' {
     '/articles/test': RouteRecordInfo<
       '/articles/test',
       '/articles/test',
+      Record<never, never>,
+      Record<never, never>,
+      never
+    >;
+    '/knowledge-card-list': RouteRecordInfo<
+      '/knowledge-card-list',
+      '/knowledge-card-list',
       Record<never, never>,
       Record<never, never>,
       never
@@ -90,8 +122,26 @@ declare module 'vue-router/auto-routes' {
       views: never;
     };
     'src/pages/articles.vue': {
-      routes: '/articles' | '/articles/placeholder' | '/articles/test';
+      routes:
+        | '/articles'
+        | '/articles/'
+        | '/articles/language/core'
+        | '/articles/language/promise'
+        | '/articles/placeholder'
+        | '/articles/test';
       views: 'default';
+    };
+    'src/pages/articles/index.vue': {
+      routes: '/articles/';
+      views: never;
+    };
+    'src/pages/articles/language/core.md': {
+      routes: '/articles/language/core';
+      views: never;
+    };
+    'src/pages/articles/language/promise.md': {
+      routes: '/articles/language/promise';
+      views: never;
     };
     'src/pages/articles/placeholder.vue': {
       routes: '/articles/placeholder';
@@ -99,6 +149,10 @@ declare module 'vue-router/auto-routes' {
     };
     'src/pages/articles/test.md': {
       routes: '/articles/test';
+      views: never;
+    };
+    'src/pages/knowledge-card-list.vue': {
+      routes: '/knowledge-card-list';
       views: never;
     };
     'src/pages/login.vue': {

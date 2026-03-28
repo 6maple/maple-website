@@ -21,7 +21,5 @@ export const usePersonalConfigStore = defineStore('personal', () => {
 
 // 确保这段代码只在开发环境下执行
 if (import.meta.hot) {
-  import.meta.hot.accept(
-    acceptHMRUpdate(usePersonalConfigStore, import.meta.hot),
-  );
+  import.meta.hot.accept(acceptHMRUpdate(usePersonalConfigStore, import.meta.hot));
 }

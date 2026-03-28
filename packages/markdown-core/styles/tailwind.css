@@ -1,15 +1,15 @@
 /* 默认隐藏锚点，鼠标悬停标题时显示 */
-.icon-link {
-  @apply icon-[lucide--link] opacity-0 transition-opacity text-blue-500 text-[0.8em] mt-[0.1em];
-}
 .md-article {
   & :is(h1, h2, h3, h4, h5, h6) {
     @apply relative;
-    & a {
-      @apply absolute -ml-[1em];
+    & .header-anchor {
+      @apply flex items-center;
     }
-    &:hover .icon-link {
+    &:hover .header-anchor:before {
       @apply opacity-100;
+    }
+    & .header-anchor:before {
+      @apply absolute -ml-[1.1em] content-['#'] icon-[lucide--link] opacity-0 transition-opacity text-blue-500 text-[0.8em];
     }
   }
   & pre.shiki {

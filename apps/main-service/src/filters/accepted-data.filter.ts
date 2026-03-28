@@ -10,11 +10,6 @@ export class AcceptedDataExceptionFilter implements ExceptionFilter {
     const response = ctx.getResponse<express.Response>();
     response
       .status(exception.getStatus())
-      .json(
-        ResponseDataImpl.buildFailure(
-          exception.message,
-          exception.errorCode.toString(),
-        ),
-      );
+      .json(ResponseDataImpl.buildFailure(exception.message, exception.errorCode.toString()));
   }
 }

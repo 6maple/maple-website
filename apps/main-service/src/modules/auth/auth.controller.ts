@@ -1,12 +1,4 @@
-import {
-  Body,
-  Controller,
-  Get,
-  Post,
-  Req,
-  Res,
-  UseGuards,
-} from '@nestjs/common';
+import { Body, Controller, Get, Post, Req, Res, UseGuards } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { ResponseDataImpl } from 'src/common/response-data';
 import { LoginAuthGuard } from './login.auth-guard';
@@ -22,11 +14,7 @@ import { RegisterDto } from './register.dto';
 import type { Request, Response } from 'express';
 
 const resolveRequestUser = (req: Request) => req.user! as AuthPayload;
-const writeTokens = (
-  res: Response,
-  accessToken: string,
-  refreshToken: string,
-) => {
+const writeTokens = (res: Response, accessToken: string, refreshToken: string) => {
   res.setHeader(HEADER_X_ACCESS_TOKEN, accessToken);
   res.cookie(COOKIE_REFRESH_TOKEN, refreshToken, {
     httpOnly: true,
@@ -65,10 +53,7 @@ export class AuthController {
   }
 
   @Post('refresh')
-  async refresh(
-    @Req() req: Request,
-    @Res({ passthrough: true }) res: Response,
-  ) {
+  async refresh(@Req() req: Request, @Res({ passthrough: true }) res: Response) {
     const token = req.cookies[COOKIE_REFRESH_TOKEN];
     const { accessToken, refreshToken } = await this.authService.refresh(
       resolveRequestUser(req),

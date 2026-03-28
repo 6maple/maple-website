@@ -2,9 +2,7 @@ import { execSync } from 'child_process';
 import { globSync } from 'tinyglobby';
 
 const getPackages = (packagePath) =>
-  globSync('*', { cwd: packagePath, onlyDirectories: true }).map((dir) =>
-    dir.replace(/\/$/, ''),
-  );
+  globSync('*', { cwd: packagePath, onlyDirectories: true }).map((dir) => dir.replace(/\/$/, ''));
 
 const scopes = [
   ...getPackages('packages'),
@@ -21,10 +19,7 @@ const scopes = [
   'deps',
 ];
 
-const gitStatus = execSync('git status --porcelain || true')
-  .toString()
-  .trim()
-  .split('\n');
+const gitStatus = execSync('git status --porcelain || true').toString().trim().split('\n');
 
 const scopeComplete = gitStatus
   .find((r) => ~r.indexOf('M  packages'))
@@ -61,11 +56,7 @@ export default {
      */
     'header-max-length': [2, 'always', 72],
     'scope-case': [2, 'always', 'lower-case'],
-    'subject-case': [
-      1,
-      'never',
-      ['sentence-case', 'start-case', 'pascal-case', 'upper-case'],
-    ],
+    'subject-case': [1, 'never', ['sentence-case', 'start-case', 'pascal-case', 'upper-case']],
     'subject-empty': [2, 'never'],
     'subject-full-stop': [2, 'never', '.'],
     'type-case': [2, 'always', 'lower-case'],

@@ -1,22 +1,23 @@
-import { createProcessor, getReportMessage } from './src';
+import { createMD, setupMD } from './src';
 
 run();
 
 async function run() {
-  const processor = createProcessor();
-  const file = await processor.process(`---
+  const md = createMD();
+  setupMD(md);
+  const result = await md.renderAsync(`---
 user: 
   name: Maple
   age: 18
 des: hillll
 ---
 # Hello world!
-:::info
+
+:::tip tip标题
 This is an info block.
 :::
     `);
 
-  console.error(getReportMessage(file));
   console.log('================');
-  console.log(String(file));
+  console.log(result);
 }

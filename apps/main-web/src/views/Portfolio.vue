@@ -29,7 +29,7 @@ const StrongText = (props: { content: string; strong?: string[] }) => {
 
 <template>
   <article
-    class="relative mx-auto max-w-4xl space-y-3 border border-zinc-200 bg-zinc-50 p-10 pt-6 text-zinc-800 transition-all animate-in fade-in md:p-16 md:pt-10 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100"
+    class="relative mx-auto mt-10 max-w-4xl space-y-3 border border-zinc-200 bg-zinc-50 p-10 pt-6 text-zinc-800 transition-all animate-in fade-in md:p-16 md:pt-10 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100"
   >
     <div
       class="not-print absolute top-0 left-0 h-1 w-full bg-linear-to-r from-indigo-600 via-violet-600 to-cyan-600"
@@ -66,7 +66,7 @@ const StrongText = (props: { content: string; strong?: string[] }) => {
         <div
           v-for="item in portfolioData.certificates"
           :key="item"
-          class="flex items-center gap-x-1 rounded-full border border-zinc-200/80 bg-zinc-50 px-3 py-0.5 text-xs font-medium text-zinc-700 dark:border-zinc-800/80 dark:bg-zinc-900 dark:text-zinc-300"
+          class="flex items-center gap-x-1 rounded-full border border-zinc-200/80 bg-zinc-100/80 px-3 py-0.5 text-xs font-medium text-zinc-700 dark:border-zinc-800/80 dark:bg-zinc-900/80 dark:text-zinc-300"
         >
           <ElIcon class="text-amber-600! dark:text-amber-400!"
             ><Medal
@@ -114,7 +114,7 @@ const StrongText = (props: { content: string; strong?: string[] }) => {
             <span
               v-for="tag in item.content.split(', ')"
               :key="tag"
-              class="rounded-full border border-zinc-200/80 bg-zinc-50 px-4 py-0.5 text-xs text-nowrap dark:border-zinc-800/80 dark:bg-zinc-900"
+              class="rounded-full border border-zinc-200/80 bg-zinc-100/80 px-4 py-0.5 text-xs text-nowrap dark:border-zinc-800/80 dark:bg-zinc-900/80"
             >
               {{ tag }}
             </span>

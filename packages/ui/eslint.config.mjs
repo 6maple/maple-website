@@ -1,7 +1,4 @@
-import {
-  configureVueProject,
-  defineConfigWithVueTs,
-} from '@vue/eslint-config-typescript';
+import { configureVueProject, defineConfigWithVueTs } from '@vue/eslint-config-typescript';
 import { vueConfig } from '@repo/eslint-config/vue';
 import pluginOxlint from 'eslint-plugin-oxlint';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';

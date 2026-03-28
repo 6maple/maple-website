@@ -1,0 +1,46 @@
+[
+  {
+    "question": "<p>JavaScript 中的作用域分为哪三类？</p>\n",
+    "answer": "<ol>\n<li><strong>全局作用域</strong>：最外层，随处可访问。</li>\n<li><strong>函数作用域</strong>：函数内部定义，外部无法直接访问。</li>\n<li><strong>块级作用域</strong>：由 <code>let</code> 和 <code>const</code> 引入，仅在 <code>{}</code> 内部有效。</li>\n</ol>\n"
+  },
+  {
+    "question": "<p>阅读以下代码，说明输出结果及原因：</p>\n<pre class=\"shiki shiki-themes vitesse-light vitesse-dark not-prose\" style=\"--shiki-light:#393a34;--shiki-dark:#dbd7caee;--shiki-light-bg:#ffffff;--shiki-dark-bg:#121212\" tabindex=\"0\"><code class=\"language-javascript\"><span class=\"line\"><span style=\"--shiki-light:#AB5959;--shiki-dark:#CB7676\">function</span><span style=\"--shiki-light:#59873A;--shiki-dark:#80A665\"> example</span><span style=\"--shiki-light:#999999;--shiki-dark:#666666\">()</span><span style=\"--shiki-light:#999999;--shiki-dark:#666666\"> {</span></span>\n<span class=\"line\"><span class=\"indent\">  </span><span style=\"--shiki-light:#1E754F;--shiki-dark:#4D9375\">if</span><span style=\"--shiki-light:#999999;--shiki-dark:#666666\"> (</span><span style=\"--shiki-light:#1E754F;--shiki-dark:#4D9375\">true</span><span style=\"--shiki-light:#999999;--shiki-dark:#666666\">)</span><span style=\"--shiki-light:#999999;--shiki-dark:#666666\"> {</span></span>\n<span class=\"line\"><span class=\"indent\">  </span><span class=\"indent\">  </span><span style=\"--shiki-light:#AB5959;--shiki-dark:#CB7676\">let</span><span style=\"--shiki-light:#B07D48;--shiki-dark:#BD976A\"> b</span><span style=\"--shiki-light:#999999;--shiki-dark:#666666\"> =</span><span style=\"--shiki-light:#2F798A;--shiki-dark:#4C9A91\"> 20</span><span style=\"--shiki-light:#999999;--shiki-dark:#666666\">;</span><span style=\"--shiki-light:#393A34;--shiki-dark:#DBD7CAEE\"> </span></span>\n<span class=\"line\"><span class=\"indent\">  </span><span style=\"--shiki-light:#999999;--shiki-dark:#666666\">}</span></span>\n<span class=\"line\"><span class=\"indent\">  </span><span style=\"--shiki-light:#B07D48;--shiki-dark:#BD976A\">console</span><span style=\"--shiki-light:#999999;--shiki-dark:#666666\">.</span><span style=\"--shiki-light:#59873A;--shiki-dark:#80A665\">log</span><span style=\"--shiki-light:#999999;--shiki-dark:#666666\">(</span><span style=\"--shiki-light:#B07D48;--shiki-dark:#BD976A\">b</span><span style=\"--shiki-light:#999999;--shiki-dark:#666666\">);</span></span>\n<span class=\"line\"><span style=\"--shiki-light:#999999;--shiki-dark:#666666\">}</span></span>\n<span class=\"line\"><span style=\"--shiki-light:#59873A;--shiki-dark:#80A665\">example</span><span style=\"--shiki-light:#999999;--shiki-dark:#666666\">();</span></span></code><button class=\"copy\" data-lang=\"javascript\" title=\"Copy code\">Copy</button></pre>\n",
+    "answer": "<p>输出：<code>ReferenceError: b is not defined</code>。\n原因：<code>let</code> 声明的变量 <code>b</code> 具有<strong>块级作用域</strong>，仅在 <code>if</code> 语句的 <code>{}</code> 块内有效，外部无法访问。</p>\n"
+  },
+  {
+    "question": "<p>什么是<strong>闭包 (Closure)</strong>？</p>\n",
+    "answer": "<p>闭包是一个函数和它周围状态（<strong>词法环境</strong>）的引用捆绑在一起形成的组合。</p>\n"
+  },
+  {
+    "question": "<p>从内存管理（GC）的角度看，闭包的本质是什么？</p>\n",
+    "answer": "<p>当外部函数执行完毕且其执行上下文被销毁后，如果内部函数仍引用了外部函数的变量，这些变量会<strong>保存在内存中</strong>（堆），而不会被垃圾回收机制（GC）回收。</p>\n"
+  },
+  {
+    "question": "<p>在以下代码中，变量 <code>count</code> 最终存储在哪里？为什么？</p>\n<pre class=\"shiki shiki-themes vitesse-light vitesse-dark not-prose\" style=\"--shiki-light:#393a34;--shiki-dark:#dbd7caee;--shiki-light-bg:#ffffff;--shiki-dark-bg:#121212\" tabindex=\"0\"><code class=\"language-javascript\"><span class=\"line\"><span style=\"--shiki-light:#AB5959;--shiki-dark:#CB7676\">function</span><span style=\"--shiki-light:#59873A;--shiki-dark:#80A665\"> createCounter</span><span style=\"--shiki-light:#999999;--shiki-dark:#666666\">()</span><span style=\"--shiki-light:#999999;--shiki-dark:#666666\"> {</span></span>\n<span class=\"line\"><span class=\"indent\">  </span><span style=\"--shiki-light:#AB5959;--shiki-dark:#CB7676\">let</span><span style=\"--shiki-light:#B07D48;--shiki-dark:#BD976A\"> count</span><span style=\"--shiki-light:#999999;--shiki-dark:#666666\"> =</span><span style=\"--shiki-light:#2F798A;--shiki-dark:#4C9A91\"> 0</span><span style=\"--shiki-light:#999999;--shiki-dark:#666666\">;</span></span>\n<span class=\"line\"><span class=\"indent\">  </span><span style=\"--shiki-light:#1E754F;--shiki-dark:#4D9375\">return</span><span style=\"--shiki-light:#AB5959;--shiki-dark:#CB7676\"> function</span><span style=\"--shiki-light:#999999;--shiki-dark:#666666\"> ()</span><span style=\"--shiki-light:#999999;--shiki-dark:#666666\"> {</span></span>\n<span class=\"line\"><span class=\"indent\">  </span><span class=\"indent\">  </span><span style=\"--shiki-light:#1E754F;--shiki-dark:#4D9375\">return</span><span style=\"--shiki-light:#AB5959;--shiki-dark:#CB7676\"> ++</span><span style=\"--shiki-light:#B07D48;--shiki-dark:#BD976A\">count</span><span style=\"--shiki-light:#999999;--shiki-dark:#666666\">;</span></span>\n<span class=\"line\"><span class=\"indent\">  </span><span style=\"--shiki-light:#999999;--shiki-dark:#666666\">};</span></span>\n<span class=\"line\"><span style=\"--shiki-light:#999999;--shiki-dark:#666666\">}</span></span>\n<span class=\"line\"><span style=\"--shiki-light:#AB5959;--shiki-dark:#CB7676\">const</span><span style=\"--shiki-light:#B07D48;--shiki-dark:#BD976A\"> counter</span><span style=\"--shiki-light:#999999;--shiki-dark:#666666\"> =</span><span style=\"--shiki-light:#59873A;--shiki-dark:#80A665\"> createCounter</span><span style=\"--shiki-light:#999999;--shiki-dark:#666666\">();</span></span></code><button class=\"copy\" data-lang=\"javascript\" title=\"Copy code\">Copy</button></pre>\n",
+    "answer": "<p>存储在<strong>堆内存 (Heap)</strong> 中。\n原因：<code>createCounter</code> 执行完后，其执行上下文虽出栈，但内部匿名函数通过闭包引用了 <code>count</code>，导致 <code>count</code> 被捕获到堆中以供后续调用。</p>\n"
+  },
+  {
+    "question": "<p>什么是 JavaScript 的<strong>原型链 (Prototype Chain)</strong>？</p>\n",
+    "answer": "<p>对象通过 <code>__proto__</code> 属性指向其构造函数的 <code>prototype</code> 对象，由此形成的逻辑链条。访问属性时，引擎会沿此链向上查找，直到找到属性或到达 <code>null</code>。</p>\n"
+  },
+  {
+    "question": "<p>原型链的终点是什么？</p>\n",
+    "answer": "<p><code>Object.prototype.__proto__ === null</code></p>\n"
+  },
+  {
+    "question": "<p>Vue 3 的 <code>config.globalProperties</code> 挂载思想与 JS 哪个核心概念相关？</p>\n",
+    "answer": "<p>与<strong>原型链</strong>的属性查找思想相关。</p>\n"
+  },
+  {
+    "question": "<p>在 JS 内存结构中，<strong>栈 (Stack)</strong> 和 <strong>堆 (Heap)</strong> 分别存储什么？</p>\n",
+    "answer": "<ol>\n<li><strong>栈 (Stack)</strong>：存放执行上下文 (Execution Context)。</li>\n<li><strong>堆 (Heap)</strong>：存放对象、原型对象以及被闭包捕获的变量块。</li>\n</ol>\n"
+  },
+  {
+    "question": "<p>闭包变量（自由变量）在函数执行前后的位置变化是怎样的？</p>\n",
+    "answer": "<p>函数执行时，变量最初在栈中；函数执行完后，若形成闭包，该变量会从<strong>栈转移到堆</strong>中的一个特殊对象里，实现持久访问。</p>\n"
+  },
+  {
+    "question": "<p>请区分 <code>__proto__</code> 和 <code>[[Scopes]]</code> 的作用：</p>\n",
+    "answer": "<ol>\n<li><code>__proto__</code>：建立了<strong>对象间</strong>的逻辑链条（原型链）。</li>\n<li><code>[[Scopes]]</code>：建立了<strong>函数对外部变量</strong>的引用链条（闭包链）。</li>\n</ol>\n"
+  }
+]

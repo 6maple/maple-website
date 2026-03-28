@@ -24,11 +24,7 @@ const handleLogin = async () => {
         <ElInput v-model="loginForm.user" placeholder="请输入用户名"></ElInput>
       </ElFormItem>
       <ElFormItem label="密码" prop="pwd">
-        <ElInput
-          v-model="loginForm.pwd"
-          placeholder="请输入密码"
-          type="password"
-        ></ElInput>
+        <ElInput v-model="loginForm.pwd" placeholder="请输入密码" type="password"></ElInput>
       </ElFormItem>
       <ElFormItem class="flex justify-center">
         <ElButton type="primary" @click="handleLogin">登录</ElButton>

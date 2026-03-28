@@ -1,2 +1,2 @@
-export * from './processor.ts';
-export * from './reporter.ts';
+export * from './core.ts';
+export * from './setup.ts';

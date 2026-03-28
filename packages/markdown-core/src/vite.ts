@@ -1,5 +1,6 @@
 import path from 'path';
-import { createProcessor } from './processor.ts';
+import { createMD } from './core.ts';
+import { setupMD } from './setup.ts';
 import pm from 'picomatch';
 
 import type { Plugin } from 'vite';
@@ -16,10 +17,15 @@ export const createViteVueMDPlugin = (options: ViteMDPluginOptions = {}) => {
     const file = path.relative(root, id).replace(/\\/g, '/');
     return checkList.some((item) => item(file));
   };
-  const processor = createProcessor();
+  const md = createMD();
+  setupMD(md);
   const convert = async (_filePath: string, code: string) => {
-    const file = await processor.process(code);
-    return { code: `<template>${file.toString()}</template>`, map: null };
+    const mdEnv: Record<string, any> = {};
+    const result = await md.renderAsync(code, mdEnv);
+    return {
+      code: `<script lang="js">export const matter = ${JSON.stringify(mdEnv.frontMatter)};export const excerpt = ${JSON.stringify(mdEnv.excerpt)};</script><template>${result}</template>`,
+      map: null,
+    };
   };
   return {
     name: 'vite-plugin-vue-md',
