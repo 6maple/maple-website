@@ -46,6 +46,11 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       Record<never, never>,
       | '/articles/'
+      | '/articles/interview/css'
+      | '/articles/interview/development'
+      | '/articles/interview/js'
+      | '/articles/interview/network'
+      | '/articles/interview/vue'
       | '/articles/language/core'
       | '/articles/language/promise'
       | '/articles/placeholder'
@@ -54,6 +59,41 @@ declare module 'vue-router/auto-routes' {
     '/articles/': RouteRecordInfo<
       '/articles/',
       '/articles',
+      Record<never, never>,
+      Record<never, never>,
+      never
+    >;
+    '/articles/interview/css': RouteRecordInfo<
+      '/articles/interview/css',
+      '/articles/interview/css',
+      Record<never, never>,
+      Record<never, never>,
+      never
+    >;
+    '/articles/interview/development': RouteRecordInfo<
+      '/articles/interview/development',
+      '/articles/interview/development',
+      Record<never, never>,
+      Record<never, never>,
+      never
+    >;
+    '/articles/interview/js': RouteRecordInfo<
+      '/articles/interview/js',
+      '/articles/interview/js',
+      Record<never, never>,
+      Record<never, never>,
+      never
+    >;
+    '/articles/interview/network': RouteRecordInfo<
+      '/articles/interview/network',
+      '/articles/interview/network',
+      Record<never, never>,
+      Record<never, never>,
+      never
+    >;
+    '/articles/interview/vue': RouteRecordInfo<
+      '/articles/interview/vue',
+      '/articles/interview/vue',
       Record<never, never>,
       Record<never, never>,
       never
@@ -125,6 +165,11 @@ declare module 'vue-router/auto-routes' {
       routes:
         | '/articles'
         | '/articles/'
+        | '/articles/interview/css'
+        | '/articles/interview/development'
+        | '/articles/interview/js'
+        | '/articles/interview/network'
+        | '/articles/interview/vue'
         | '/articles/language/core'
         | '/articles/language/promise'
         | '/articles/placeholder'
@@ -133,6 +178,26 @@ declare module 'vue-router/auto-routes' {
     };
     'src/pages/articles/index.vue': {
       routes: '/articles/';
+      views: never;
+    };
+    'src/pages/articles/interview/css.md': {
+      routes: '/articles/interview/css';
+      views: never;
+    };
+    'src/pages/articles/interview/development.md': {
+      routes: '/articles/interview/development';
+      views: never;
+    };
+    'src/pages/articles/interview/js.md': {
+      routes: '/articles/interview/js';
+      views: never;
+    };
+    'src/pages/articles/interview/network.md': {
+      routes: '/articles/interview/network';
+      views: never;
+    };
+    'src/pages/articles/interview/vue.md': {
+      routes: '/articles/interview/vue';
       views: never;
     };
     'src/pages/articles/language/core.md': {
