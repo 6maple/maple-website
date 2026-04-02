@@ -29,12 +29,13 @@
     "postinstall": "pnpm stub &"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
     "@commitlint/cli": "^20.2.0",
     "@commitlint/config-conventional": "^20.2.0",
     "@pnpm/find-workspace-packages": "^4.0.16",
     "@pnpm/logger": "^4.0.0",
     "@pnpm/types": "^8.4.0",
+    "@repo/eslint-config": "workspace:*",
+    "@rushstack/eslint-patch": "^1.16.1",
     "@types/fs-extra": "^9.0.13",
     "@types/gulp": "^4.0.9",
     "@types/node": "catalog:types",

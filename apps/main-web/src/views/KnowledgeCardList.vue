@@ -4,7 +4,9 @@ import MdArticle from './MdArticle.vue';
 import data from '../../../../packages/llm/output.json';
 import { useMasonry } from '@/hooks/useMasonry';
 
-const knowledgeShows = ref(new Array(data.length).fill(false));
+const knowledgeShows = ref(
+  Array.from<boolean>({ length: data.length }).fill(false),
+);
 
 const containerTemplateRef = useTemplateRef('container');
 const childTemplateRef = useTemplateRef('child');

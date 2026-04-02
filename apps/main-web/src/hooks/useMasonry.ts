@@ -21,14 +21,14 @@ const handleMasonryLayout = (
   }
   const [gx, gy] = gap;
   const colWidth = (containerWidth - gx * (cols - 1)) / cols;
-  const colHeights = new Array(cols).fill(0);
+  const colHeights = Array.from<number>({ length: cols }).fill(0);
   for (const [i, item] of childrenData.entries()) {
     const [itemEl, itemHeight] = item;
     itemEl.style.position = 'absolute';
     itemEl.style.width = `${colWidth}px`;
     const ci = i % cols; // column index
     itemEl.style.transform = `translate3d(${ci * (colWidth + gx)}px, ${colHeights[ci]}px, 0)`;
-    colHeights[ci] += itemHeight + gy;
+    colHeights[ci]! += itemHeight + gy;
   }
   const totalHeight = Math.max(...colHeights, gy) - gy;
   containerEl.style.height = `${totalHeight}px`;

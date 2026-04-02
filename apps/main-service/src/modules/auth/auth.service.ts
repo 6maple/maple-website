@@ -2,7 +2,11 @@ import crypto from 'crypto';
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { AccountService } from '../account/account.service';
-import { AuthPayload, REFRESH_THRESHOLD, REFRESH_TOKEN_EXPIRE } from './auth-data';
+import {
+  AuthPayload,
+  REFRESH_THRESHOLD,
+  REFRESH_TOKEN_EXPIRE,
+} from './auth-data';
 import { RedisService } from '../common/redis/redis.service';
 
 @Injectable()
@@ -23,11 +27,17 @@ export class AuthService {
 
   async generateRefreshToken(payload: AuthPayload) {
     const token = crypto.randomBytes(32).toString('hex');
-    await this.redisService.set(`refresh_token:${payload.user}`, token, REFRESH_TOKEN_EXPIRE);
+    await this.redisService.set(
+      `refresh_token:${payload.user}`,
+      token,
+      REFRESH_TOKEN_EXPIRE,
+    );
     return token;
   }
   async checkRefreshToken(payload: AuthPayload, token: string) {
-    const oldToken = await this.redisService.get(`refresh_token:${payload.user}`);
+    const oldToken = await this.redisService.get(
+      `refresh_token:${payload.user}`,
+    );
     return oldToken === token;
   }
 

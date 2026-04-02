@@ -1,4 +1,7 @@
-import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescript';
+import {
+  defineConfigWithVueTs,
+  vueTsConfigs,
+} from '@vue/eslint-config-typescript';
 import pluginVue from 'eslint-plugin-vue';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import { defineConfig, globalIgnores } from 'eslint/config';
@@ -75,4 +78,7 @@ export const vueConfig = defineConfig([
   },
 ]);
 
-export default defineConfigWithVueTs([...vueConfig, eslintPluginPrettierRecommended]);
+export default defineConfigWithVueTs([
+  ...vueConfig,
+  eslintPluginPrettierRecommended,
+]);
